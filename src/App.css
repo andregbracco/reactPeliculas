@@ -21,6 +21,7 @@
   height: 50px;
   font-weight: bold;
 }
+
 .pelis {
   border: solid 2px black;
   width: 75%;
@@ -59,7 +60,7 @@
   margin-top: 20px;
 
 }
-.pelinueva {
+.pelinueva{
   margin-right: 15px;
   margin-left: 15px;
 }

@@ -1,98 +1,35 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import listaPelis from './datos/listaPelis'
+
+import IngresaNuevoJuego from './components/IngresaNuevoJuego';
+import ListaPelis from './components/ListaPelis'
+import Cabecera from './components/Cabecera'
+import Fila from './components/Fila'
 
 function App() {
+
+    const [peliNueva, setPeliNueva] = useState('Peli Nueva');
+    const [peliculas, setPeliculas] = useState(listaPelis);
+
+
+    function tomaValor(evento) {
+        setPeliNueva(evento.target.value)
+    }
+
   return (
     <div className="tabla">
-      <div className="row cabecera">
-        <div className="col">
-          Calificame
-        </div>
-        <div className="pelis" >
-          Películas
-        </div>
-        <div className="col" >
-          Cantidad
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          Excelente
-        </div>
-        <div className="pelis">
-          <div className="cardpeli">lal</div>
-            
-        </div>
-        <div className="col">
-          0
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          Bueno
-        </div>
-        <div className="pelis">
+      <Cabecera columna1='Califícame' columna2='Películas' columna3='Cantidad'/>
+      <Fila columna1='Excelente' columna2='' columna3='0'/>
+      <Fila columna1='Bueno' columna2='' columna3='0'/>
+      <Fila columna1='Regular' columna2='' columna3='0'/>
+      <Fila columna1='Malo' columna2='' columna3='0'/>
+      <Fila columna1='Caca' columna2='' columna3='0'/>
 
-        </div>
-        <div className="col">
-          0
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          Regulero
-        </div>
-        <div className="pelis">
+      <ListaPelis peliculas={peliculas} peliNueva={peliNueva} />
 
-        </div>
-        <div className="col">
-          0
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          Malo
-        </div>
-        <div className="pelis">
+      <IngresaNuevoJuego setPeliNueva={setPeliNueva}/>
 
-        </div>
-        <div className="col">
-          0
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          Caca
-        </div>
-        <div className="pelis">
-
-        </div>
-        <div className="col">
-          0
-        </div>
-      </div>
-      <h2>Películas:</h2>
-      <div className="conteiner-pelis">
-        <div className="cardpeli">bomboncito</div>
-        <div className="cardpeli">lindo</div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-        <div className="cardpeli"></div>
-
-      </div>
-      <div className="agregar">
-        <label>Nueva Película:</label>
-        <input type="text" className="pelinueva" placeholder="Peli..."></input>
-        <button >Agregar</button>
-      </div>
   </div>
 
   );
