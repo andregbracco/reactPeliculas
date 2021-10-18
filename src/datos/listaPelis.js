@@ -3,7 +3,7 @@ export default [
     'Your Name',
     'Avengers',
     'John Wick',
-    'La noche del demonio',
+    'Watchmen',
     'Olvidado',
     'V de vendetta'
 ]

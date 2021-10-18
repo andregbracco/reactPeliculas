@@ -26,9 +26,9 @@ function App() {
       <Fila columna1='Malo' columna2='' columna3='0'/>
       <Fila columna1='Caca' columna2='' columna3='0'/>
 
-      <ListaPelis peliculas={peliculas} peliNueva={peliNueva} />
+      <ListaPelis setPeliculas={setPeliculas} peliculas={peliculas} peliNueva={peliNueva} />
 
-      <IngresaNuevoJuego setPeliNueva={setPeliNueva}/>
+      <IngresaNuevoJuego setPeliculas={setPeliculas}  setPeliNueva={setPeliNueva}/>
 
   </div>
 

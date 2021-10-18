@@ -43,6 +43,7 @@
 }
 .cardpeli {
   display: flex;
+  position: relative;
   width: 100px;
   height: 100px;
   background-color: rgba(137, 43, 226, 0.405);
@@ -77,4 +78,14 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.delete {
+  position: absolute;
+  align-self: baseline;
+  background-color: #c30000;
+  margin: 5px;
+
+}
+.nombrePeli {
+  position: absolute;
 }
