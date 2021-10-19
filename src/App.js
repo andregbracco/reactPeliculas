@@ -11,7 +11,11 @@ function App() {
 
     const [peliNueva, setPeliNueva] = useState('Peli Nueva');
     const [peliculas, setPeliculas] = useState(listaPelis);
-
+    const [excelente, setExcelente] = useState(['pocahontas', 'el padrino'])
+    const [bueno, setBueno] = useState([])
+    const [regular, setRegular] = useState([])
+    const [malo, setMalo] = useState([])
+    const [caca, setCaca] = useState(['dragon ball'])
 
     function tomaValor(evento) {
         setPeliNueva(evento.target.value)
@@ -19,12 +23,12 @@ function App() {
 
   return (
     <div className="tabla">
-      <Cabecera columna1='Califícame' columna2='Películas' columna3='Cantidad'/>
-      <Fila columna1='Excelente' columna2='' columna3='0'/>
-      <Fila columna1='Bueno' columna2='' columna3='0'/>
-      <Fila columna1='Regular' columna2='' columna3='0'/>
-      <Fila columna1='Malo' columna2='' columna3='0'/>
-      <Fila columna1='Caca' columna2='' columna3='0'/>
+      <Cabecera calificaciones='Califícame' listadoPeliculas='Películas' columna3='Cantidad'/>
+      <Fila calificaciones='Excelente' listadoPeliculas={excelente} setLista={setExcelente}/>
+      <Fila calificaciones='Bueno' listadoPeliculas={bueno} setLista={setBueno}/>
+      <Fila calificaciones='Regular' listadoPeliculas={regular} setLista={setRegular}/>
+      <Fila calificaciones='Malo' listadoPeliculas={malo} setLista={setMalo}/>
+      <Fila calificaciones='Caca' listadoPeliculas={caca} setLista={setCaca}/>
 
       <ListaPelis setPeliculas={setPeliculas} peliculas={peliculas} peliNueva={peliNueva} />
 

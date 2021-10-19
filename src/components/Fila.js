@@ -1,16 +1,17 @@
 import React from 'react';
+import Card from './Card';
 
-const Fila = ({columna1, columna2, columna3}) => {
+const Fila = ({calificaciones, listadoPeliculas, setLista}) => {
     return (
       <div className="row">
         <div className="col">
-          {columna1}
+          {calificaciones}
         </div>
         <div className="pelis">
-          {columna2}
+          {listadoPeliculas.map(peli=> <Card peli={peli} setPeliculas={setLista} />)}
         </div>
         <div className="col">
-          {columna3}
+          {listadoPeliculas.length}
         </div>
       </div>
     )

@@ -38,7 +38,7 @@
 }
 .conteiner-pelis {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .cardpeli {
@@ -46,13 +46,17 @@
   position: relative;
   width: 100px;
   height: 100px;
-  background-color: rgba(137, 43, 226, 0.405);
+  background-color: #C079E7;
   border-radius: 10px;
-  border: solid 2px black;
   margin: 10px;
   justify-content: center;
   align-items: center;
-  
+  box-shadow: 12px 14px 17px -12px rgba(125,124,125,1);
+  border: solid 1px #C079E7;
+}
+.cardpeli:hover {
+  background-color: #D5A0F3;
+  border: solid 1px #E9C6FC;
 }
 .agregar {
   display: flex;
@@ -75,17 +79,21 @@ button {
 .row .cardpeli {
   width: 70px;
   height: 70px;
-  white-space: nowrap;
+  white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
 }
 .delete {
   position: absolute;
-  align-self: baseline;
   background-color: #c30000;
-  margin: 5px;
-
+  border-radius: 0 10px 0 0;
+  right: 0;
+  top: -1px;
+}
+.delete:hover {
+  background-color: red;
 }
 .nombrePeli {
-  position: absolute;
+  text-align: -webkit-center;
 }
