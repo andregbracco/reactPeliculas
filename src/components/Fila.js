@@ -7,7 +7,10 @@ const Fila = ({calificacion, setSeleccionada, seleccionada}) => {
     const [listaDePeliculas, setListaDePeliculas] = useState([])
 
     function sumarLista() {
-        setListaDePeliculas([...listaDePeliculas, seleccionada])
+        if (seleccionada.length > 1) {
+            setListaDePeliculas([...listaDePeliculas, seleccionada])
+            setSeleccionada([])
+            }
     }
 
     return (
@@ -17,7 +20,9 @@ const Fila = ({calificacion, setSeleccionada, seleccionada}) => {
               <p onClick={sumarLista} >{calificacion}</p>
             </div>
             <div className="pelis">
-              {listaDePeliculas.map(peli=> <Card peli={peli} setPeliculas={setListaDePeliculas} setSeleccionada={setSeleccionada}/>)}
+              {listaDePeliculas.map(peli=> <Card peli={peli}
+                                                setPeliculas={setListaDePeliculas}
+                                                setSeleccionada={setSeleccionada}/>)}
             </div>
             <div className="col">
               {listaDePeliculas.length}
