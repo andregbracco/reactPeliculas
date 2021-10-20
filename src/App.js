@@ -12,7 +12,7 @@ function App() {
 
     const [peliNueva, setPeliNueva] = useState('Peli Nueva');
     const [peliculas, setPeliculas] = useState(listaPelis);
-    const [seleccionada, setSeleccionada] = useState('')
+    const [seleccionada, setSeleccionada] = useState('');
 
     function tomaValor(evento) {
         setPeliNueva(evento.target.value)
@@ -22,11 +22,11 @@ function App() {
     <div className="contenedor">
         <div className="tabla">
           <Cabecera calificaciones='Califícame' listadoPeliculas='Películas' columna3='Cantidad'/>
-          <Fila calificacion='Excelente' setSeleccionada={setSeleccionada}/>
-          <Fila calificacion='Bueno' setSeleccionada={setSeleccionada}/>
-          <Fila calificacion='Regular' setSeleccionada={setSeleccionada} />
-          <Fila calificacion='Malo' setSeleccionada={setSeleccionada} />
-          <Fila calificacion='Hediondo' setSeleccionada={setSeleccionada} />
+          <Fila calificacion='Excelente' seleccionada={seleccionada} setSeleccionada={setSeleccionada}/>
+          <Fila calificacion='Bueno' seleccionada={seleccionada} setSeleccionada={setSeleccionada}/>
+          <Fila calificacion='Regular' seleccionada={seleccionada} setSeleccionada={setSeleccionada} />
+          <Fila calificacion='Malo' seleccionada={seleccionada} setSeleccionada={setSeleccionada} />
+          <Fila calificacion='Hediondo' seleccionada={seleccionada} setSeleccionada={setSeleccionada} />
 
           <ListaPelis setPeliculas={setPeliculas}
                       peliculas={peliculas}
