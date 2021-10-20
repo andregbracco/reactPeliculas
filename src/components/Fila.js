@@ -1,19 +1,26 @@
 import React from 'react';
+import { useState } from 'react';
 import Card from './Card';
 
-const Fila = ({calificaciones, listadoPeliculas, setLista}) => {
+const Fila = ({calificacion, setSeleccionada}) => {
+
+    const [listaDePeliculas, setListaDePeliculas] = useState([])
+
     return (
-      <div className="row">
-        <div className="col">
-          {calificaciones}
+        <div>
+          <div className="row">
+            <div className={"col " + calificacion.toLowerCase()}>
+              {calificacion}
+            </div>
+            <div className="pelis">
+              {listaDePeliculas.map(peli=> <Card peli={peli} setPeliculas={setListaDePeliculas} setSeleccionada={setSeleccionada}/>)}
+            </div>
+            <div className="col">
+              {listaDePeliculas.length}
+            </div>
+          </div>
+
         </div>
-        <div className="pelis">
-          {listadoPeliculas.map(peli=> <Card peli={peli} setPeliculas={setLista} />)}
-        </div>
-        <div className="col">
-          {listadoPeliculas.length}
-        </div>
-      </div>
     )
 }
 

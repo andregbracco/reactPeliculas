@@ -3,39 +3,43 @@ import './App.css';
 import listaPelis from './datos/listaPelis'
 
 import IngresaNuevoJuego from './components/IngresaNuevoJuego';
-import ListaPelis from './components/ListaPelis'
-import Cabecera from './components/Cabecera'
-import Fila from './components/Fila'
+import ListaPelis from './components/ListaPelis';
+import Cabecera from './components/Cabecera';
+import Fila from './components/Fila';
+import Seleccionada from './components/Seleccionada';
 
 function App() {
 
     const [peliNueva, setPeliNueva] = useState('Peli Nueva');
     const [peliculas, setPeliculas] = useState(listaPelis);
-    const [excelente, setExcelente] = useState(['pocahontas', 'el padrino'])
-    const [bueno, setBueno] = useState([])
-    const [regular, setRegular] = useState([])
-    const [malo, setMalo] = useState([])
-    const [caca, setCaca] = useState(['dragon ball'])
+    const [seleccionada, setSeleccionada] = useState('')
 
     function tomaValor(evento) {
         setPeliNueva(evento.target.value)
     }
 
   return (
-    <div className="tabla">
-      <Cabecera calificaciones='Califícame' listadoPeliculas='Películas' columna3='Cantidad'/>
-      <Fila calificaciones='Excelente' listadoPeliculas={excelente} setLista={setExcelente}/>
-      <Fila calificaciones='Bueno' listadoPeliculas={bueno} setLista={setBueno}/>
-      <Fila calificaciones='Regular' listadoPeliculas={regular} setLista={setRegular}/>
-      <Fila calificaciones='Malo' listadoPeliculas={malo} setLista={setMalo}/>
-      <Fila calificaciones='Caca' listadoPeliculas={caca} setLista={setCaca}/>
+    <div className="contenedor">
+        <div className="tabla">
+          <Cabecera calificaciones='Califícame' listadoPeliculas='Películas' columna3='Cantidad'/>
+          <Fila calificacion='Excelente' setSeleccionada={setSeleccionada}/>
+          <Fila calificacion='Bueno' setSeleccionada={setSeleccionada}/>
+          <Fila calificacion='Regular' setSeleccionada={setSeleccionada} />
+          <Fila calificacion='Malo' setSeleccionada={setSeleccionada} />
+          <Fila calificacion='Hediondo' setSeleccionada={setSeleccionada} />
 
-      <ListaPelis setPeliculas={setPeliculas} peliculas={peliculas} peliNueva={peliNueva} />
+          <ListaPelis setPeliculas={setPeliculas}
+                      peliculas={peliculas}
+                      peliNueva={peliNueva}
+                      seleccionada={seleccionada}
+                      setSeleccionada={setSeleccionada}
+          />
 
-      <IngresaNuevoJuego setPeliculas={setPeliculas}  setPeliNueva={setPeliNueva}/>
+          <IngresaNuevoJuego setPeliculas={setPeliculas}  setPeliNueva={setPeliNueva}/>
 
-  </div>
-
+          <Seleccionada seleccionada={seleccionada} />
+      </div>
+    </div>
   );
 }
 

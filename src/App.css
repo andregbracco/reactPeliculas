@@ -1,36 +1,62 @@
+.contenedor {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #EAECEE;
+}
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   height: 100px;
   justify-content: center;
-  
 }
-
 .col {
   display: flex;
   justify-content: center;
-  border: solid 2px black;
-  width: 10%;
+  border: solid 2px #000000;
+  width: 11%;
   text-align: center;
-  background-color: rgba(100, 148, 237, 0.796);
+  background-color: #000000;
   align-items: center;
-
+  color: #ffffff;
+}
+.excelente {
+  background: rgb(255, 127, 127);
+  color: #000000;
+}
+.bueno {
+  background: rgb(255, 191, 127);
+  color: #000000;
+}
+.regular {
+  background: rgb(255, 223, 127);
+  color: #000000;
+}
+.malo {
+  background: rgb(255, 255, 127);
+  color: #000000;
+}
+.hediondo {
+  background: rgb(191, 255, 127);
+  color: #000000;
 }
 .row.cabecera {
   height: 50px;
   font-weight: bold;
 }
-
 .pelis {
-  border: solid 2px black;
+  border: solid 2px #000000;
   width: 75%;
   display: flex;
   justify-content: left;
   align-items: center;
+  background: #333;
+  color: #ffffff;
 }
 .row.cabecera .pelis {
   justify-content: center;
+  background-color: #000000;
+  color: ffffff;
 
 }
 .tabla {
@@ -46,28 +72,48 @@
   position: relative;
   width: 100px;
   height: 100px;
-  background-color: #C079E7;
+  background-color: #BAB9BD;
   border-radius: 10px;
   margin: 10px;
   justify-content: center;
   align-items: center;
   box-shadow: 12px 14px 17px -12px rgba(125,124,125,1);
-  border: solid 1px #C079E7;
+  border: solid 1px #BAB9BD;
+}
+.seleccionada {
+  display: flex;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 12px 14px 17px -12px rgba(125,124,125,1);
+  border: solid 1px #000000;
+  cursor: pointer;
+  color: #000000;
+}
+.cardpeli:active {
+  background-color: blue;
 }
 .cardpeli:hover {
-  background-color: #D5A0F3;
-  border: solid 1px #E9C6FC;
+  background-color: #EBEAEC;
+  border: solid 1px #000000;
 }
 .agregar {
   display: flex;
-  justify-content: left;
+  justify-content: space-evenly;
   font-size: 1.3em;
   margin-top: 20px;
-
+  border: solid 1px black;
+  padding: 3%;
+  background-color: #000000;
+  color: #ffffff;
 }
 .pelinueva{
-  margin-right: 15px;
-  margin-left: 15px;
+  width: 50%;
 }
 label {
   font-size: 1.3em;
@@ -87,13 +133,19 @@ button {
 .delete {
   position: absolute;
   background-color: #c30000;
-  border-radius: 0 10px 0 0;
+  border-radius: 0 10px 0 10px;
   right: 0;
   top: -1px;
+  border: 0;
+  height: 20px;
+  font-size: x-small;
+  font-weight: bold;
 }
 .delete:hover {
   background-color: red;
 }
 .nombrePeli {
   text-align: -webkit-center;
+  cursor: pointer;
+  color: #000000;
 }

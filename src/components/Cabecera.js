@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Cabecera = ({columna1, columna2, columna3}) => {
+const Cabecera = ({calificaciones, listadoPeliculas, columna3}) => {
     return (
       <div className="row cabecera">
         <div className="col">
-          {columna1}
+          {calificaciones}
         </div>
         <div className="pelis" >
-          {columna2}
+          {listadoPeliculas}
         </div>
         <div className="col" >
           {columna3}
