@@ -12,27 +12,39 @@ function App() {
 
     const [peliNueva, setPeliNueva] = useState('Peli Nueva');
     const [peliculas, setPeliculas] = useState(listaPelis);
-    const [seleccionada, setSeleccionada] = useState('');
+    const [seleccionada, setSeleccionada] = useState(''); 
+    
+    function borrarSeleccionada() {
+      setPeliculas(
+        peliculas.filter(peli=> peli!==seleccionada)
+      )
+      setSeleccionada('')
+    }
 
-    function tomaValor(evento) {
-        setPeliNueva(evento.target.value)
+    function eliminar(peli) {
+      setPeliculas(peliculas => [...peliculas.filter(pelicula => pelicula !== peli )]);
+    }
+
+    function agregarPelicula(peli) {
+      setPeliculas([...peliculas, peli])
     }
 
   return (
     <div className="contenedor">
         <div className="tabla">
           <Cabecera calificaciones='Califícame' listadoPeliculas='Películas' columna3='Cantidad'/>
-          <Fila calificacion='Excelente' seleccionada={seleccionada} setSeleccionada={setSeleccionada}/>
-          <Fila calificacion='Bueno' seleccionada={seleccionada} setSeleccionada={setSeleccionada}/>
-          <Fila calificacion='Regular' seleccionada={seleccionada} setSeleccionada={setSeleccionada} />
-          <Fila calificacion='Malo' seleccionada={seleccionada} setSeleccionada={setSeleccionada} />
-          <Fila calificacion='Hediondo' seleccionada={seleccionada} setSeleccionada={setSeleccionada} />
+          <Fila agregarPelicula={agregarPelicula} calificacion='Excelente' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
+          <Fila agregarPelicula={agregarPelicula} calificacion='Bueno' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
+          <Fila agregarPelicula={agregarPelicula} calificacion='Regular' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
+          <Fila agregarPelicula={agregarPelicula} calificacion='Malo' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
+          <Fila agregarPelicula={agregarPelicula} calificacion='Hediondo' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
 
-          <ListaPelis setPeliculas={setPeliculas}
+          <ListaPelis 
                       peliculas={peliculas}
-                      peliNueva={peliNueva}
                       seleccionada={seleccionada}
                       setSeleccionada={setSeleccionada}
+                      eliminar={eliminar}
+                     
           />
 
           <IngresaNuevoJuego setPeliculas={setPeliculas}  setPeliNueva={setPeliNueva}/>

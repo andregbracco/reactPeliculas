@@ -1,11 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
 
-const Card = ({peli, setPeliculas, setSeleccionada, seleccionada}) => {
+const Card = ({peli, setSeleccionada, seleccionada, eliminar }) => {  
 
-    function eliminar() {
-      setPeliculas(peliculas => [...peliculas.filter(pelicula => pelicula !== peli )]);
-    }
+
     function seleccionar() {
         setSeleccionada(peli)
     }
@@ -13,7 +10,7 @@ const Card = ({peli, setPeliculas, setSeleccionada, seleccionada}) => {
         return (
             <div key={peli} onClick={seleccionar} className={peli === seleccionada ? "seleccionada" : "cardpeli"}>
                 <p className="nombrePeli">{peli}</p>
-                <button onClick={eliminar} className="delete">X</button>
+                <button onClick={()=>eliminar(peli)} className="delete">X</button>
             </div>
         )
     }

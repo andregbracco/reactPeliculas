@@ -1,16 +1,20 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Card from './Card';
 
-const Fila = ({calificacion, setSeleccionada, seleccionada}) => {
+const Fila = ({calificacion, setSeleccionada, seleccionada, borrarSeleccionada, agregarPelicula}) => {
 
     const [listaDePeliculas, setListaDePeliculas] = useState([])
 
     function sumarLista() {
         if (seleccionada.length > 1) {
-            setListaDePeliculas([...listaDePeliculas, seleccionada])
-            setSeleccionada([])
+            setListaDePeliculas(listaDePeliculas =>[...listaDePeliculas.filter(pelicula=> pelicula !== seleccionada), seleccionada])
+            borrarSeleccionada()
             }
+    }
+    function eliminarDeFila(peli) {
+      setListaDePeliculas(listaDePeliculas => [...listaDePeliculas.filter(pelicula => pelicula !== peli )])
+      agregarPelicula(peli);
     }
 
     return (
@@ -21,8 +25,10 @@ const Fila = ({calificacion, setSeleccionada, seleccionada}) => {
             </div>
             <div className="pelis">
               {listaDePeliculas.map(peli=> <Card peli={peli}
-                                                setPeliculas={setListaDePeliculas}
-                                                setSeleccionada={setSeleccionada}/>)}
+                                                setSeleccionada={()=>{}}
+                                                seleccionada={seleccionada}
+                                                eliminar={eliminarDeFila}
+                                          />)}
             </div>
             <div className="col">
               {listaDePeliculas.length}

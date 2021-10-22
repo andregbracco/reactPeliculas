@@ -135,6 +135,14 @@ button {
   text-overflow: ellipsis;
   text-align: center;
 }
+.row .seleccionada {
+  width: 70px;
+  height: 70px;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;  
+}
 .delete {
   position: absolute;
   background-color: #c30000;
