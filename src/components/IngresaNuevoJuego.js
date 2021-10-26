@@ -18,9 +18,9 @@ const IngresaNuevoJuego = ({ setPeliNueva, setPeliculas}) => {
 
     return (
       <div className="agregar">
-        <label>Nueva Película:</label>
-        <input onChange={tomaValor} type="text" className="pelinueva" placeholder="Peli..." value={nueva}></input>
-        <button onClick={guardaNueva}>Agregar</button>
+        <label>New Movies:</label>
+        <input onChange={tomaValor} type="text" className="pelinueva" placeholder="Movie..." value={nueva}></input>
+        <button onClick={guardaNueva}>Add</button>
       </div>
     )
 }

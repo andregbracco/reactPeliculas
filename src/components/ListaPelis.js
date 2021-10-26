@@ -6,7 +6,7 @@ const ListaPelis = ({peliculas, seleccionada, setSeleccionada, eliminar }) => {
     
     return (
       <>
-          <h2>Películas:</h2>
+          <h2>Movies:</h2>
           <div className="conteiner-pelis">
 
             {peliculas.map(peli => <Card

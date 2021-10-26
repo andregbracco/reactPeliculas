@@ -1,9 +1,9 @@
 export default [
-    'Volver al futuro',
+    'Back to the Future',
     'Your Name',
     'Avengers',
     'John Wick',
     'Watchmen',
-    'Olvidado',
-    'V de vendetta'
+    'Forgotten',
+    'Toy Story'
 ]
