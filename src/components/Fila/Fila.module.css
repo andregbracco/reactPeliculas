@@ -1,0 +1,76 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100px;
+    justify-content: center;
+  }
+.col {
+    display: flex;
+    justify-content: center;
+    border: solid 2px #000000;
+    width: 11%;
+    text-align: center;
+    background-color: #000000;
+    align-items: center;
+    color: #ffffff;
+ }
+.row .col p:hover {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+  .excelente {
+    background: rgb(255, 127, 127);
+    color: #000000;
+  }
+  .bueno {
+    background: rgb(255, 191, 127);
+    color: #000000;
+  }
+  .regular {
+    background: rgb(255, 223, 127);
+    color: #000000;
+  }
+  .malo {
+    background: rgb(255, 255, 127);
+    color: #000000;
+  }
+  .hediondo {
+    background: rgb(191, 255, 127);
+    color: #000000;
+  }
+  
+
+.row .cardpeli {
+    width: 70px;
+    height: 70px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+  .row .seleccionada {
+    width: 70px;
+    height: 70px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;  
+  }
+
+
+.pelis {
+    border: solid 2px #000000;
+    width: 75%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: #333;
+    color: #ffffff;
+  }
+  .row.cabecera .pelis {
+    justify-content: center;
+    background-color: #000000;
+    color: ffffff;
+  
+  }

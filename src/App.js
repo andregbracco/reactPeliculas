@@ -5,7 +5,7 @@ import listaPelis from './datos/listaPelis'
 import IngresaNuevoJuego from './components/IngresaNuevoJuego';
 import ListaPelis from './components/ListaPelis';
 import Cabecera from './components/Cabecera';
-import Fila from './components/Fila';
+import Fila from './components/Fila/Fila';
 import Seleccionada from './components/Seleccionada';
 
 function App() {

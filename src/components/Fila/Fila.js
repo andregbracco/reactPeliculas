@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import Card from './Card';
+import Card from '../Card';
 
-const Fila = ({calificacion, setSeleccionada, seleccionada, borrarSeleccionada, agregarPelicula}) => {
+import css from './Fila.module.css';
+
+const Fila = ({calificacion, seleccionada, borrarSeleccionada, agregarPelicula}) => {
 
     const [listaDePeliculas, setListaDePeliculas] = useState([])
 
@@ -19,18 +21,18 @@ const Fila = ({calificacion, setSeleccionada, seleccionada, borrarSeleccionada, 
 
     return (
         <div>
-          <div className="row">
-            <div className={"col " + calificacion.toLowerCase()}>
+          <div className={css.row}>
+            <div className={css.col + ' ' + css[calificacion.toLowerCase()]}>
               <p onClick={sumarLista} >{calificacion}</p>
             </div>
-            <div className="pelis">
+            <div className={css.pelis}>
               {listaDePeliculas.map(peli=> <Card peli={peli}
                                                 setSeleccionada={()=>{}}
                                                 seleccionada={seleccionada}
                                                 eliminar={eliminarDeFila}
                                           />)}
             </div>
-            <div className="col">
+            <div className={css.col}>
               {listaDePeliculas.length}
             </div>
           </div>
