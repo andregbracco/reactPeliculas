@@ -65,7 +65,6 @@
     "@babel/types" "^7.12.17"
     jsesc "^2.5.1"
     source-map "^0.5.0"
-<<<<<<< HEAD
 
 "@babel/generator@^7.16.0":
   version "7.16.0"
@@ -75,8 +74,6 @@
     "@babel/types" "^7.16.0"
     jsesc "^2.5.1"
     source-map "^0.5.0"
-=======
->>>>>>> dae7f9f554e9eb571a5b4eb056f5f251bd8c0e0f
 
 "@babel/helper-annotate-as-pure@^7.10.4", "@babel/helper-annotate-as-pure@^7.12.13":
   version "7.12.13"
