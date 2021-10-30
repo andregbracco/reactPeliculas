@@ -32,12 +32,12 @@ function App() {
   return (
     <div className="contenedor">
         <div className="tabla">
-          <Cabecera calificaciones='Califícame' listadoPeliculas='Películas' columna3='Cantidad'/>
-          <Fila agregarPelicula={agregarPelicula} calificacion='Excelente' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
-          <Fila agregarPelicula={agregarPelicula} calificacion='Bueno' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
+          <Cabecera calificaciones='Rating!' listadoPeliculas='Movies' columna3='Count'/>
+          <Fila agregarPelicula={agregarPelicula} calificacion='Excellent' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
+          <Fila agregarPelicula={agregarPelicula} calificacion='Good' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
           <Fila agregarPelicula={agregarPelicula} calificacion='Regular' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
-          <Fila agregarPelicula={agregarPelicula} calificacion='Malo' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
-          <Fila agregarPelicula={agregarPelicula} calificacion='Hediondo' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
+          <Fila agregarPelicula={agregarPelicula} calificacion='Bad' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
+          <Fila agregarPelicula={agregarPelicula} calificacion='Terrible' seleccionada={seleccionada} borrarSeleccionada={borrarSeleccionada}/>
 
           <ListaPelis 
                       peliculas={peliculas}
